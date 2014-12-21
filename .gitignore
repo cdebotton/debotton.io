@@ -1,0 +1,10 @@
+.DS_Store
+thumbs.db
+._*
+
+node_modules
+public
+
+app/config/*
+!app/config/index.js
+!app/config/app.js

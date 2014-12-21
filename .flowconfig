@@ -1,0 +1,9 @@
+[ignore]
+.*/public/*
+
+[include]
+
+[libs]
+./app/interfaces
+
+[options]
