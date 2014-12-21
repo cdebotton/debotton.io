@@ -3,6 +3,7 @@
 var mongoose  = require('mongoose');
 var async     = require('async');
 var gUtil     = require('gulp-util');
+var config = require(__dirname + '/../app/config');
 var fs = require('fs');
 var modelPaths = __dirname + '/../api/models';
 var seedPaths = __dirname + '/../api/migrations';
@@ -25,7 +26,7 @@ function loadModels(files, callback) {
 };
 
 function connect(modelNames, callback) {
-  mongoose.connect('mongodb://localhost/debotton');
+  mongoose.connect(config.db);
   mongoose.connection.on('open', callback.bind(callback, null, modelNames));
 };
 

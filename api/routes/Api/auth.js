@@ -8,7 +8,7 @@ module.exports = function(Api, passport, config) {
       if (err) throw err;
       if (! token) {
         ctx.status = 404;
-        ctx.body = {success: false};
+        ctx.body = {token: null};
       }
       else {
         yield ctx.login(token._user);

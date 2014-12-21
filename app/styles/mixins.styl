@@ -1,0 +1,33 @@
+cube(size=5rem)
+  perspective 1000
+  .cube
+    display inline-block
+    position relative
+    width size
+    height size
+    transform-style preserve-3d
+    transition transform 275ms ease-in-out
+    transform translateZ(-@width/2)
+    {block}
+    &:hover
+      transform rotateY(-90deg)
+    .side
+      border-top 1px solid #000
+      width @width
+      height @height
+      backface-visibility hidden
+      position absolute
+      &.front
+        transform translateZ(size/2)
+      &.right
+        transform rotateY(90deg) translateZ(@width / 2)
+        border-left 1px solid #000
+        position absolute
+
+route-handler()
+  padding-left 6rem
+  position relative
+  display inline-block
+  width 100%
+  min-height 100vh
+  {block}

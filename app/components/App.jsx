@@ -9,8 +9,8 @@ var StoreMixin            = require('../mixins/StoreMixin');
 var AsyncDataMixin        = require('../mixins/AsyncDataMixin');
 var {CSSTransitionGroup}  = React.addons;
 
-var Head                = require('./Layout/Head.jsx');
-var Navigation          = require('./Layout/Navigation.jsx');
+var Head                  = require('./Layout/Head.jsx');
+var Navigation            = require('./Layout/Navigation.jsx');
 
 var {RouteHandler} = require('react-router');
 
@@ -32,13 +32,6 @@ var App = React.createClass({
     );
   },
 
-  getMessage(): any {
-    var {user} = this.state;
-    return AuthStore.authed() ? (
-      <p>{`Hello, ${user.getIn(['name', 'first'])} ${user.getIn(['name', 'last'])}`}</p>
-    ) : false;
-  },
-
   render(): any {
     var {env, title} = this.props;
     var name = this.getRoutes().reverse()[0].name;
@@ -48,7 +41,6 @@ var App = React.createClass({
       <Head env={env} title={title} />
       <body>
         <Navigation />
-        {this.getMessage()}
         <CSSTransitionGroup
           className="router"
           transitionName="route"

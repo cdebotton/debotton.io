@@ -1,9 +1,10 @@
 module.exports = {
-  title: 'koajs isomorphic server',
-  db: 'mongodb://localhost/debotton',
-  secretKey: 'koajs-test',
-  secretToken: 'koajs-test-token',
-  sessionName: 'koajs-test:session',
+  title: 'christian de botton',
+  titleShort: 'cdb',
+  db: 'mongodb://localhost/cdebotton',
+  secretKey: 'cdb:dev',
+  secretToken: 'cdb:dev-token',
+  sessionName: 'cdb:dev-session',
 
   tumblr: {
     consumerKey: process.env.TUMBLR_CONSUMERKEY,

@@ -43,7 +43,7 @@ var Head = React.createClass({
 function getTitle(title) {
   return title === config.title ?
     config.title :
-    `${title} | ${config.title}`;
+    `${title} | ${config.titleShort}`;
 }
 
 function getState(params: Object, query: Object): Object {

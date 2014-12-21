@@ -1,0 +1,21 @@
+.router
+  display block
+  position relative
+  min-height 100%
+
+  .route-enter, .route-leave
+    display block
+    position absolute
+    top 0
+    left 0
+    transition all 350ms ease-in-out
+
+  .route-enter
+    opacity 0
+    &.route-enter-active
+      opacity 1
+
+  .route-leave
+    opacity 1
+    &.route-leave-active
+      opacity 0

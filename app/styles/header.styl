@@ -1,0 +1,53 @@
+.header
+  position fixed
+  top 0
+  left 0
+  width 100vh
+  height 5rem
+  color #fff
+  z-index 100
+  transform-origin 0% 100%
+  transform rotateZ(90deg) translateX(-5rem)
+  background linear-gradient(90deg, #020111 10%,#3a3a52 100%)
+  box-shadow 0 0 10px rgba(black, 0.75)
+  cf()
+  h1
+    margin 0
+    padding 0.5rem 2rem
+    float left
+    font-weight 100
+    height @height
+    font-size @height - 2
+  nav
+    float left
+    height @height
+    cf()
+    a
+      display block
+      float left
+      height @height
+      width @height
+      position relative
+      text-align center
+      transform rotateZ(-90deg)
+      text-decoration none
+      color #000
+      transition font-size 175ms ease-in-out
+      +cube(@height)
+        .side
+          display block
+        .front
+          background-color rgba(#fff,  0.01)
+        .right
+          background-color rgba(#fff, 0.25)
+        i
+          display block
+          position absolute
+          top 50%
+          left 50%
+          color #fff
+          transform translate(-50%, -50%)
+      &.active .cube
+        transform rotateY(-90deg)
+      &:last-child .cube
+        border-bottom 1px solid #000
