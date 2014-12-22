@@ -12,10 +12,14 @@
 
   .route-enter
     opacity 0
+    transform translateY(-15vh)
     &.route-enter-active
       opacity 1
+      transform translateY(0vh)
 
   .route-leave
     opacity 1
+    transform translateY(0vh)
     &.route-leave-active
       opacity 0
+      transform translateY(15vh)

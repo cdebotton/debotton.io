@@ -13,6 +13,7 @@ var BlogHandler = React.createClass({
     return (
       <div className="blog-handler">
         <h2>BlogHandler</h2>
+        <p>This page will be the blog post aggregator.</p>
       </div>
     );
   }

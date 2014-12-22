@@ -7,10 +7,13 @@
   color #fff
   z-index 100
   transform-origin 0% 100%
-  transform rotateZ(90deg) translateX(-5rem)
+  transform translateX(-@height) translateY(-@height) rotateZ(90deg)
   background linear-gradient(90deg, #020111 10%,#3a3a52 100%)
   box-shadow 0 0 10px rgba(black, 0.75)
+  transition all 375ms ease-in-out
   cf()
+  &.active
+    transform translateY(-@height) rotateZ(90deg)
   h1
     margin 0
     padding 0.5rem 2rem

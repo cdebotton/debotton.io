@@ -1,15 +1,26 @@
 /** @flow */
 
-var React = require('react');
-var {Link} = require('react-router');
+var React = require('react/addons');
 var config = require('../../config');
+var {Link, State: RouterStateMixin} = require('react-router');
+var {classSet} = React.addons;
 
 var Cube = require('../Common/Cube.jsx');
 
 var Navigation = React.createClass({
+  mixins: [RouterStateMixin],
+
   render(): any {
+    var routes: Object = this.getRoutes();
+    var routeName = routes[routes.length - 1].name;
+
+    var cx: any = classSet({
+      'header': true,
+      'active': routeName !== 'index'
+    });
+
     return (
-      <header className="header">
+      <header className={cx}>
         <h1>{config.title}</h1>
         <nav>
           <Link to="index">

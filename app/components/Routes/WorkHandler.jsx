@@ -13,6 +13,7 @@ var WorkHandler = React.createClass({
     return (
       <div className="work-handler">
         <h2>WorkHandler</h2>
+        <p>This page will be the work aggregator.</p>
       </div>
     );
   }

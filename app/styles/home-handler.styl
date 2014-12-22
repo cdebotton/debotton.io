@@ -1,11 +1,34 @@
 .home-handler
-  h2
-    border-bottom 1px solid #fff
-    padding-right 0.5rem
-    display inline-block
+  padding 2rem 0
   +route-handler()
-    background-color transparent
+    h2
+      padding-right 0.5rem
+      display inline-block
+    .animated-text-group
+      position relative
+      .border
+        content-fill()
+        border-bottom 2px solid #eee
+        @keyframes border-grow
+          from
+            right 100%
+          to
+            right 0
+        animation-fill-mode both
+        animation-name border-grow
+        animation-timing-function ease-in-out
+      .animated-text-group-child
+        display inline-block
+        @keyframes drop-in
+          from
+            transform translate3d(-50%, -25%, 0) skew(25deg) scale(1.25)
+            opacity 0
+          to
+            transform translate3d(0%, 0%, 0) skew(0deg) scale(1)
+            opacity 1
+        animation drop-in 100ms ease-in-out
+        animation-fill-mode both
+    a
+      color #aaa
     .col
-      padding-top 2rem
-      padding-bottom 2rem
       col(1/3)

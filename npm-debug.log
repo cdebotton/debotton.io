@@ -1,0 +1,99 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-D',
+1 verbose cli   'velocity-animation' ]
+2 info using npm@2.0.0
+3 info using node@v0.11.14
+4 warn package.json callsite@1.0.0 No repository field.
+5 warn package.json gulp-filelog@0.4.1 No README data
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'velocity-animation', null ]
+8 verbose cache add spec="velocity-animation" args=["velocity-animation",null]
+9 verbose parsed spec { raw: 'velocity-animation',
+9 verbose parsed spec   scope: null,
+9 verbose parsed spec   name: 'velocity-animation',
+9 verbose parsed spec   rawSpec: '',
+9 verbose parsed spec   spec: '*',
+9 verbose parsed spec   type: 'range' }
+10 verbose parsed spec { raw: 'velocity-animation',
+10 verbose parsed spec   scope: null,
+10 verbose parsed spec   name: 'velocity-animation',
+10 verbose parsed spec   rawSpec: '',
+10 verbose parsed spec   spec: '*',
+10 verbose parsed spec   type: 'range' }
+11 verbose addNamed [ 'velocity-animation', '*' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile f772226e-velocity-animation velocity-animation@*
+14 verbose lock velocity-animation@* /Users/cdebotton/.npm/f772226e-velocity-animation.lock
+15 silly addNameRange { name: 'velocity-animation', range: '*', hasData: false }
+16 verbose mapToRegistry name velocity-animation
+17 verbose mapToRegistry uri https://registry.npmjs.org/velocity-animation
+18 verbose request on initialization, where is /velocity-animation
+19 verbose request after pass 1, where is /velocity-animation
+20 verbose request url raw /velocity-animation
+21 verbose request resolving registry [ 'https://registry.npmjs.org/', './velocity-animation' ]
+22 verbose request after pass 2, where is https://registry.npmjs.org/velocity-animation
+23 verbose request no auth needed
+24 info attempt registry request try #1 at 22:10:13
+25 verbose request id 92b58f20c27cbc2d
+26 http request GET https://registry.npmjs.org/velocity-animation
+27 http 404 https://registry.npmjs.org/velocity-animation
+28 verbose headers { date: 'Mon, 22 Dec 2014 03:10:13 GMT',
+28 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+28 verbose headers   'content-type': 'application/json',
+28 verbose headers   'cache-control': 'max-age=0',
+28 verbose headers   'content-length': '52',
+28 verbose headers   'accept-ranges': 'bytes',
+28 verbose headers   via: '1.1 varnish',
+28 verbose headers   age: '0',
+28 verbose headers   'x-served-by': 'cache-iad2127-IAD',
+28 verbose headers   'x-cache': 'MISS',
+28 verbose headers   'x-cache-hits': '0',
+28 verbose headers   'x-timer': 'S1419217813.939054,VS0,VE17',
+28 verbose headers   connection: 'close' }
+29 silly registry.get cb [ 404,
+29 silly registry.get   { date: 'Mon, 22 Dec 2014 03:10:13 GMT',
+29 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=0',
+29 silly registry.get     'content-length': '52',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     'x-served-by': 'cache-iad2127-IAD',
+29 silly registry.get     'x-cache': 'MISS',
+29 silly registry.get     'x-cache-hits': '0',
+29 silly registry.get     'x-timer': 'S1419217813.939054,VS0,VE17',
+29 silly registry.get     connection: 'close' } ]
+30 silly lockFile f772226e-velocity-animation velocity-animation@*
+31 silly lockFile f772226e-velocity-animation velocity-animation@*
+32 verbose stack Error: 404 Not Found: velocity-animation
+32 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:259:14)
+32 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:198:65)
+32 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:236:22)
+32 verbose stack     at Request.emit (events.js:110:17)
+32 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1142:14)
+32 verbose stack     at Request.emit (events.js:129:20)
+32 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1096:12)
+32 verbose stack     at IncomingMessage.emit (events.js:129:20)
+32 verbose stack     at _stream_readable.js:907:16
+32 verbose stack     at process._tickCallback (node.js:372:11)
+33 verbose statusCode 404
+34 verbose pkgid velocity-animation
+35 verbose cwd /Users/cdebotton/www/debotton.io
+36 error Darwin 14.0.0
+37 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-D" "velocity-animation"
+38 error node v0.11.14
+39 error npm  v2.0.0
+40 error code E404
+41 error 404 Not Found: velocity-animation
+41 error 404
+41 error 404 'velocity-animation' is not in the npm registry.
+41 error 404 You should bug the author to publish it (or use the name yourself!)
+41 error 404 It was specified as a dependency of 'koajs-server'
+41 error 404
+41 error 404 Note that you can also install from a
+41 error 404 tarball, folder, http url, or git url.
+42 verbose exit [ 1, true ]
