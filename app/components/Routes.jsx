@@ -5,6 +5,7 @@ var App               = require('./App.jsx');
 var HomeHandler       = require('./Routes/HomeHandler.jsx');
 var WorkHandler       = require('./Routes/WorkHandler.jsx');
 var BlogHandler       = require('./Routes/BlogHandler.jsx');
+var AboutHandler      = require('./Routes/AboutHandler.jsx');
 var NotFoundHandler   = require('./Routes/NotFoundHandler.jsx');
 
 var {Route, DefaultRoute, NotFoundRoute} = require('react-router');
@@ -14,6 +15,7 @@ module.exports = (
     <DefaultRoute name="index" handler={HomeHandler} />
     <Route name="work" handler={WorkHandler} />
     <Route name="blog" handler={BlogHandler} />
+    <Route name="about" handler={AboutHandler} />
     <NotFoundRoute handler={NotFoundHandler} />
   </Route>
 );

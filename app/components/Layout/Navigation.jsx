@@ -38,6 +38,11 @@ var Navigation = React.createClass({
               <i className="fa fa-pencil" />
             </Cube>
           </Link>
+          <Link to="about">
+            <Cube side="right">
+              <i className="fa fa-user" />
+            </Cube>
+          </Link>
         </nav>
       </header>
     );

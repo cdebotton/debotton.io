@@ -9,20 +9,24 @@ cube(size=5rem)
     transition transform 275ms ease-in-out
     transform translateZ(-@width/2)
     {block}
-    &:hover
-      transform rotateY(-90deg)
     .side
       border-top 1px solid #000
       width @width
       height @height
       backface-visibility hidden
       position absolute
+      transition box-shadow 275ms ease-in-out
       &.front
         transform translateZ(size/2)
       &.right
         transform rotateY(90deg) translateZ(@width / 2)
         border-left 1px solid #000
         position absolute
+        box-shadow inset 10px 0 40px black
+    &:hover, .active &
+      transform rotateY(-90deg)
+      .side.right
+        box-shadow inset 1px 0 2px rgba(black 0.2)
 
 route-handler()
   padding-left 6rem
