@@ -33,7 +33,7 @@ var Head = React.createClass({
         <title>{getTitle(this.props.title)}</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Josefin+Slab:400,600' rel='stylesheet' />
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,300italic,400italic|Josefin+Slab:400,600' rel='stylesheet' />
         {stylesheets}
       </head>
     );

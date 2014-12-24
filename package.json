@@ -91,6 +91,7 @@
     "jest-cli": "^0.2.0",
     "jquery": "^2.1.1",
     "koa-livereload": "^0.1.23",
+    "marked": "^0.3.2",
     "nib": "^1.0.4",
     "normalize.css": "^3.0.2",
     "react-tools": "^0.12.1",
