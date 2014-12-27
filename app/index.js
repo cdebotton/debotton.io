@@ -5,7 +5,7 @@ var assign              = require('react/lib/Object.assign');
 var Router              = require('react-router');
 var co                  = require('co');
 var Routes              = require('./components/Routes.jsx');
-var getTitle            = require('./utils/getTitle');
+var getMeta            = require('./utils/getMeta');
 var fetchData           = require('./utils/fetchData');
 var docLoaded           = require('./utils/docLoaded');
 var getSession          = require('./utils/getSession');
@@ -38,11 +38,11 @@ if ('undefined' !== typeof window) {
           fetchData(state.routes, state.params, state.query);
         }
 
-        var title = getTitle(state.routes, state.params, state.query);
+        var meta = getMeta(state.routes, state.params, state.query);
 
         React.render(
           <Handler
-            title={title}
+            meta={meta}
             session={token}
             params={state.params}
             query={state.query}

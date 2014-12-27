@@ -4,7 +4,7 @@ var React = require('react');
 
 var AboutHandler = React.createClass({
   statics: {
-    getPageTitle(): string {
+    getPageMeta(): string {
       return 'about me';
     }
   },

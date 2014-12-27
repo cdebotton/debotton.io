@@ -4,12 +4,12 @@
   left 0
   width 100vh
   height 5rem
-  color #fff
+  color #222
   z-index 100
   transform-origin 0% 100%
   transform translateX(-@height) translateY(-@height) rotateZ(90deg)
-  background linear-gradient(90deg, #020111 10%,#3a3a52 100%)
-  box-shadow 0 0 10px rgba(black, 0.75)
+  background linear-gradient(90deg, #fff 10%,#eee 100%)
+  box-shadow 0 0 10px rgba(black, 0.05)
   transition all 375ms ease-in-out
   cf()
   &.active
@@ -34,7 +34,7 @@
       text-align center
       transform rotateZ(-90deg)
       text-decoration none
-      color #000
+      color #222
       transition font-size 175ms ease-in-out
       +cube(@height)
         .side
@@ -42,17 +42,17 @@
         .front
           background-color rgba(#fff,  0.01)
         .right
-          background-color hsl(225, 25%, 25%)
+          background-color hsl(225, 25%, 95%)
         i
           display block
           position absolute
           top 50%
           left 50%
-          color #fff
+          color #222
           transform translate(-50%, -50%)
       &.active .cube
         transform rotateY(-90deg)
         .right
           box-shadow inset 1px 0 2px rgba(black 0.2)
       &:last-child .cube
-        border-bottom 1px solid #000
+        border-bottom 1px solid #eee

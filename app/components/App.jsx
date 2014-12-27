@@ -11,6 +11,7 @@ var {CSSTransitionGroup}  = React.addons;
 
 var Head                  = require('./Layout/Head.jsx');
 var Navigation            = require('./Layout/Navigation.jsx');
+var Background            = require('./Layout/Background.jsx');
 
 var {RouteHandler} = require('react-router');
 
@@ -21,7 +22,7 @@ var App = React.createClass({
     query: React.PropTypes.object.isRequired,
     params: React.PropTypes.object.isRequired,
     env: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired
+    meta: React.PropTypes.object.isRequired
   },
 
   getBundle(env: string): any {
@@ -33,13 +34,13 @@ var App = React.createClass({
   },
 
   render(): any {
-    var {env, title} = this.props;
+    var {env, meta} = this.props;
     var name = this.getRoutes().reverse()[0].name;
 
     return (
       <html lang="us">
-      <Head env={env} title={title} />
-      <body>
+      <Head env={env} meta={meta} />
+      <body className={`app ${meta.theme || 'red'}`}>
         <Navigation />
         <CSSTransitionGroup
           className="router"
@@ -47,6 +48,7 @@ var App = React.createClass({
           component="div">
           <RouteHandler key={name} {...this.props} />
         </CSSTransitionGroup>
+        <Background />
         {this.getBundle(env)}
       </body>
       </html>

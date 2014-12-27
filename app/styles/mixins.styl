@@ -1,46 +1,15 @@
-cube(size=5rem)
-  perspective 1000
-  .cube
-    display inline-block
-    position relative
-    width size
-    height size
-    transform-style preserve-3d
-    transition transform 275ms ease-in-out
-    transform translateZ(-@width/2)
-    {block}
-    .side
-      border-top 1px solid #000
-      width @width
-      height @height
-      backface-visibility hidden
-      position absolute
-      transition box-shadow 275ms ease-in-out
-      &.front
-        transform translateZ(size/2)
-      &.right
-        transform rotateY(90deg) translateZ(@width / 2)
-        border-left 1px solid #000
-        position absolute
-        box-shadow inset 10px 0 40px black
-    &:hover, .active &
-      transform rotateY(-90deg)
-      .side.right
-        box-shadow inset 1px 0 2px rgba(black 0.2)
-
-route-handler()
-  padding-left 6rem
-  position relative
-  display inline-block
-  width 100vw
-  min-height 100vh
+router-mixin()
   {block}
+  padding 4rem 8rem
+
+cover()
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  left 0
 
 content-fill(spacer=' ')
   display block
-  content spacer
-  position absolute
-  top 0
-  left 0
-  right 0
-  bottom 0
+  content ' '
+  cover()

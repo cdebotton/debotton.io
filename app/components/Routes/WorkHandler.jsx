@@ -4,7 +4,7 @@ var React = require('react');
 
 var WorkHandler = React.createClass({
   statics: {
-    getPageTitle(): string {
+    getPageMeta(): string {
       return 'work';
     }
   },

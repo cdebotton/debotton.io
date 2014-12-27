@@ -4,7 +4,7 @@ var React = require('react');
 
 var NotFoundHandler = React.createClass({
   statics: {
-    getPageTitle(): string {
+    getPageMeta(): string {
       return 'page not found';
     }
   },

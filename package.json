@@ -100,6 +100,7 @@
     "rupture": "^0.6.1",
     "streamqueue": "^0.1.1",
     "superagent": "^0.21.0",
+    "three": "^0.69.0",
     "through": "^2.3.6",
     "tiny-lr": "^0.1.4",
     "velocity-animate": "^1.1.0",

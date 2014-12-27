@@ -7,7 +7,7 @@ var PageStore = require('../../stores/PageStore');
 
 var Head = React.createClass({
   propTypes: {
-    title: React.PropTypes.string.isRequired
+    meta: React.PropTypes.object.isRequired
   },
 
   mixins: [StoreMixin(getState, PageStore)],
@@ -24,13 +24,14 @@ var Head = React.createClass({
 
   render(): any {
     var {env} = this.props;
+    var {title} = this.props.meta;
     var stylesheets = this.getStylesheets(env);
 
     return (
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <title>{getTitle(this.props.title)}</title>
+        <title>{getTitle(title)}</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,300italic,400italic|Josefin+Slab:400,600' rel='stylesheet' />

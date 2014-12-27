@@ -10,6 +10,7 @@ var AnimatedTextGroup = React.createClass({
     children: React.PropTypes.string.isRequired,
     underlined: React.PropTypes.bool.isRequired,
     delay: React.PropTypes.string,
+    animation: React.PropTypes.string.isRequired,
     duration: React.PropTypes.string.isRequired,
     Element: React.PropTypes.string.isRequired
   },
@@ -19,17 +20,21 @@ var AnimatedTextGroup = React.createClass({
   },
 
   render(): any {
-    var {duration, underlined, children, Element, delay, ...props} = this.props;
-    var cx = classSet({
+    var {duration, underlined, children, Element, delay, animation, className, ...props} = this.props;
+    var classes = {
       'animated-text-group': true,
       'underlined': underlined
-    });
+    };
+
+    if (className) classes[className] = true;
+
+    var cx = classSet(classes);
 
     var delayer = parseFloat(delay, 10);
     var chars = children.split('');
     var incrementor = (parseFloat(duration, 10) / chars.length);
     var units = /\d+\.?\d+?(s|ms)/.exec(duration)[1];
-    var children = chars.map(wrapChars(incrementor, units, delayer));
+    var children = chars.map(wrapChars(animation, incrementor, units, delayer));
 
     return (
       <Element
@@ -60,7 +65,7 @@ function setCSS3(obj, prop, value) {
   return obj;
 };
 
-function wrapChars(incrementor: number, units: string, delayer: number): Function {
+function wrapChars(animationName: string, incrementor: number, units: string, delayer: number): Function {
   var __ID = 0;
   var __SPACES = 0;
 
@@ -72,8 +77,13 @@ function wrapChars(incrementor: number, units: string, delayer: number): Functio
       var key = 'space:' + (++__SPACES);
       elem = '&nbsp;';
     }
+
     var styles = setCSS3({}, 'animationDuration', (incrementor * __ID) + units);
     styles = setCSS3(styles, 'animationDelay', delayer + units);
+    styles = setCSS3(styles, 'animationName', animationName);
+    styles = setCSS3(styles, 'animationFillMode', 'both');
+
+    styles.display = 'inline-block';
 
     return (
       <span

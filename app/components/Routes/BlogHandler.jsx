@@ -4,7 +4,7 @@ var React = require('react');
 
 var BlogHandler = React.createClass({
   statics: {
-    getPageTitle(): string {
+    getPageMeta(): string {
       return 'blog';
     }
   },

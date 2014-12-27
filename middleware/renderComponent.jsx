@@ -1,6 +1,6 @@
 var React               = require('react');
 var config              = require('../app/config');
-var getTitle            = require('../app/utils/getTitle');
+var getMeta            = require('../app/utils/getMeta');
 var fetchData           = require('../app/utils/fetchData');
 var ReactRouter         = require('react-router');
 
@@ -42,12 +42,12 @@ function renderComponent() {
     if (res) {
       var {Handler, state} = res;
       var data = yield fetchData(state.routes, state.params, state.query);
-      var title = getTitle(state.routes, state.params, state.query);
+      var meta = getMeta(state.routes, state.params, state.query);
 
       try {
         var markup = React.renderToString(
           <Handler
-            title={title}
+            meta={meta}
             token={this.session.passport.user || null}
             params={state.params}
             query={state.query}
