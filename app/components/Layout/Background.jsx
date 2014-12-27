@@ -28,7 +28,7 @@ var Background = React.createClass({
     cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
-    var light = new THREE.AmbientLight(0x000044);
+    var light = new THREE.AmbientLight(0x000022);
     light.position.set(50, 50, 50);
     scene.add(light);
 
